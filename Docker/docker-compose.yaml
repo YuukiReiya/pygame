@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  python:
+    build:
+      context: ./
+      dockerfile: ./dockerfile
+    # container名
+    container_name: 'python'
+    restart: always
+    # コンテナの中に入った直後の作業ディレクトリ
+    #working_dir: '/root/'
+    tty: true
+    volumes:
+      - ./mnt/:/mnt/
+      - ./opt/:/opt/
